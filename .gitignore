@@ -1,0 +1,26 @@
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- PyInstaller build output ---
+build/
+dist/
+*.spec
+
+# --- Python cache / bytecode ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Local app data (in case it ever ends up inside the repo folder) ---
+*.db
+*.sqlite3
+vcf_output/
