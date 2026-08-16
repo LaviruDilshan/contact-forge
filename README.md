@@ -12,12 +12,29 @@ a duplicate contact twice, even across completely different lists.
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
 ![GUI](https://img.shields.io/badge/GUI-Tkinter-8b7cf6)
 ![Storage](https://img.shields.io/badge/Storage-SQLite-22d3ee)
-![Version](https://img.shields.io/badge/Version-v1.0-success)
+![Latest Release](https://img.shields.io/github/v/release/LaviruDilshan/contact-forge?color=8b7cf6&label=latest)
 ![License](https://img.shields.io/badge/License-Unlicensed-lightgrey)
 
 </div>
 
 ---
+
+## 📥 Download
+
+Don't want to install Python or build from source? Grab a ready-to-run
+executable from the **[latest release](https://github.com/LaviruDilshan/contact-forge/releases/latest)**:
+
+| Platform | Download |
+|---|---|
+| 🪟 Windows | [ContactForge-windows.exe](https://github.com/LaviruDilshan/contact-forge/releases/download/v1.0.0/ContactForge-windows.exe) |
+| 🐧 Linux | [ContactForge-linux](https://github.com/LaviruDilshan/contact-forge/releases/download/v1.0.0/ContactForge-linux) |
+
+No install, no Python required — just download and double-click (Windows)
+or `chmod +x ContactForge-linux && ./ContactForge-linux` (Linux).
+
+See the [Releases page](https://github.com/LaviruDilshan/contact-forge/releases)
+for release notes and older versions. Prefer running from source instead?
+See [Installation](#installation) below.
 
 ## Overview
 
@@ -87,8 +104,8 @@ pip install -r requirements.txt
 ## Installation
 
 ```bash
-git https://github.com/LaviruDilshan/contact-forge.git
-cd contactforge
+git clone https://github.com/LaviruDilshan/contact-forge.git
+cd contact-forge
 pip install -r requirements.txt
 python vcf_contact_manager.py
 ```
@@ -148,10 +165,16 @@ data.
 ## Project structure
 
 ```
-contactforge/
-├── vcf_contact_manager.py   # the entire application (GUI + DB + VCF logic)
-├── requirements.txt         # no external deps — included for convention
-├── screenshots/             # optional, for the README preview images
+contact-forge/
+├── .github/
+│   └── workflows/
+│       ├── build-windows.yml # CI: builds ContactForge.exe on every push
+│       └── release.yml       # CI: builds + attaches both exes on a version tag
+├── vcf_contact_manager.py    # the entire application (GUI + DB + VCF logic)
+├── requirements.txt          # no external deps — included for convention
+├── requirements-dev.txt      # only needed to build the .exe (PyInstaller)
+├── build.bat                 # one-click local build script (run on Windows)
+├── screenshots/              # optional, for the README preview images
 └── README.md
 ```
 
@@ -163,7 +186,6 @@ Ideas for future versions:
 - [ ] Editable per-contact fields beyond name/number (email, organization)
 - [ ] Multiple named number lists managed within a single database
 - [ ] Optional shared/team database backend
-- [ ] Packaged standalone executables (PyInstaller builds for Windows/macOS)
 
 ## Contributing
 
