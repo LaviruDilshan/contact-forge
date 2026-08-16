@@ -87,7 +87,7 @@ pip install -r requirements.txt
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/contactforge.git
+git https://github.com/LaviruDilshan/contact-forge.git
 cd contactforge
 pip install -r requirements.txt
 python vcf_contact_manager.py
